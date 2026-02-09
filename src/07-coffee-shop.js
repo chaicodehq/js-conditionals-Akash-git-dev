@@ -32,4 +32,107 @@
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
   // Your code here
+   if((size!=="small") &&  (size!=="medium") && (size!=="large"))return -1;
+
+   if((type!=="regular") && (type!=="latte") &&  (type!=="cappuccino") && (type!=="mocha"))return -1;
+
+   let totalPrice=0;
+   
+  
+   if(size==="small")
+   {
+      totalPrice+=3;
+      switch (type) {
+        case "regular":
+          totalPrice += 0;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+
+        case "latte":
+          totalPrice += 1;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+
+        case "cappuccino":
+          totalPrice += 1.5;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+
+        case "mocha":
+          totalPrice +=2;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+      }
+   }
+
+   else if(size==="medium")
+   {
+      totalPrice += 4;
+      switch (type) {
+        case "regular":
+          totalPrice += 0;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+
+        case "latte":
+          totalPrice += 1;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+
+        case "cappuccino":
+          totalPrice += 1.5;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+
+        case "mocha":
+          totalPrice += 2;
+          if (extras.whippedCream) totalPrice += 0.5;
+          if (extras.extraShot) totalPrice += 0.75;
+          break;
+      }
+   }
+   else{
+     totalPrice += 5;
+     switch (type) {
+       case "regular":
+         totalPrice += 0;
+         if (extras.whippedCream) totalPrice += 0.5;
+         if (extras.extraShot) totalPrice += 0.75;
+         break;
+
+       case "latte":
+         totalPrice += 1;
+         if (extras.whippedCream) totalPrice += 0.5;
+         if (extras.extraShot) totalPrice += 0.75;
+         break;
+
+       case "cappuccino":
+         totalPrice += 1.5;
+         if (extras.whippedCream) totalPrice += 0.5;
+         if (extras.extraShot) totalPrice += 0.75;
+         break;
+
+       case "mocha":
+         totalPrice += 2;
+         if (extras.whippedCream) totalPrice += 0.5;
+         if (extras.extraShot) totalPrice += 0.75;
+         break;
+     }
+   }
+
+   totalPrice = Math.round(totalPrice * 100) / 100;
+   return totalPrice;
+
+
+   
+  
 }
+
+
