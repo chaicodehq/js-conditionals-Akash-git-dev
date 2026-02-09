@@ -27,4 +27,27 @@
  */
 export function calculateTax(income) {
   // Your code here
+
+  if(income<=0)return 0;
+
+  let taxAmt=0;
+
+
+  if(income>=0 && income<=10000)taxAmt=0;
+
+  else if(income>=10001 && income<=30000)
+  {
+     taxAmt=(income-10000)*(0.1);
+  }
+
+  else if(income>=30001 && income<=70000)
+  {
+     taxAmt = ((income - 30000) * 0.2)+2000;
+  }
+  else
+  {
+     taxAmt=((income-70000)*0.3)+2000+8000;
+  }
+  return taxAmt;
 }
+
